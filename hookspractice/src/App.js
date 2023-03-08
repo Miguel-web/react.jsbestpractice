@@ -15,6 +15,8 @@ import React, {useState} from 'react';
   );
 }*/
 
+// ejercicio 2
+
 function App() {
   
   const [counter, setCounter] = useState(0)
@@ -26,5 +28,10 @@ function App() {
     
   );
   }
+
+  // ejercicio 3
+  
+
+
   
 export default App;

@@ -1,5 +1,5 @@
-import './App.css';
-import React, {useState} from 'react';
+/* import './App.css';
+import React, {useState} from 'react'; */
 
 // ejercicio 1
 
@@ -31,6 +31,8 @@ import React, {useState} from 'react';
 
   // ejercicio 3
   
+  import React, {useState} from 'react';
 
+  
   
 export default App;

@@ -1,3 +1,6 @@
+import './App.css';
+import React from 'react';
+
 /* import './App.css';
 import React, {useState} from 'react'; */
 
@@ -57,28 +60,45 @@ return (
 */
 // ejercicio 4
 
-import React, {useState, useEffect} from 'react';
 
-function App () {
+const themes = {
+  light: {
+    foreground: "#000000",
+    backgroud: "#eeeeee"
+  },
+  dark: {
+    foreground: "#ffffff",
+    backgroud: "#222222"
+  }
+};
 
- const [count, setCount] = useState(0);
+const ThemeContext = React.createContext(themes.light);
 
- useEffect(() => {setCount(count + 1);
-
-return () => {
- console.log('Cleanup');
-}
-
- },[])
-
-return (
-
- <div className="App">
-   <h1>{count}</h1>
- </div>
-
+export default function App() {
+  return (
+  <ThemeContext.Provider value={themes.dark}>
+  <Toolbar />
+  </ThemeContext.Provider>
 );
-
 }
 
-export default App;
+function Toolbar(props) {
+    return(
+    <div>
+      <ThemedButton/>
+    </div>
+    );
+}
+
+function ThemedButton() {
+  const theme = React.useContext(ThemeContext);
+  return (
+    <button style={{background: theme.background, color: theme.foreground }}>
+      I m styled by theme context!
+    </button>
+
+  );
+}
+
+// ejercicio 5
+

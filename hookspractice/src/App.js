@@ -31,8 +31,54 @@ import React, {useState} from 'react'; */
 
   // ejercicio 3
   
-  import React, {useState} from 'react';
+/*  import React, {useState, useEffect} from 'react';
 
-  
-  
+ function App () {
+
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {setCount(count + 1);
+
+return () => {
+  console.log('Cleanup');
+}
+
+  },[])
+
+return (
+
+  <div className="App">
+    <h1>{count}</h1>
+  </div>
+
+);
+
+}
+*/
+// ejercicio 4
+
+import React, {useState, useEffect} from 'react';
+
+function App () {
+
+ const [count, setCount] = useState(0);
+
+ useEffect(() => {setCount(count + 1);
+
+return () => {
+ console.log('Cleanup');
+}
+
+ },[])
+
+return (
+
+ <div className="App">
+   <h1>{count}</h1>
+ </div>
+
+);
+
+}
+
 export default App;
